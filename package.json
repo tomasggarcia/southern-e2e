@@ -17,5 +17,10 @@
   "homepage": "https://github.com/tomasggarcia/southern-e2e#readme",
   "devDependencies": {
     "@playwright/test": "^1.28.1"
+  },
+  "dependencies": {
+    "@types/duckduckgo-images-api": "^1.0.1",
+    "axios": "^1.2.0",
+    "duckduckgo-images-api": "^1.0.5"
   }
 }
