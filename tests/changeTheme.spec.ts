@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }, testInfo) => {
   await page.goto('');
 });
 
-test('Change Theme', async ({ page }) => {
+test('Change Theme to "Terminal"', async ({ page }) => {
   const settingsPage = new SettingsPage(page)
   await settingsPage.sideBarButton.click();
   await settingsPage.themesButton.click();

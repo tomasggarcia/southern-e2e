@@ -2,7 +2,7 @@ const axios = require('axios')
 
 const { getToken } = require('duckduckgo-images-api/src/utils')
 
-const url = 'https://duckduckgo.com/'
+const url = 'http://api.duckduckgo.com/'
 
 const headers = {
     'content-type': 'application/json',
@@ -22,7 +22,7 @@ async function printUrls(keywords) {
         "vqd": token,
         "f": ",,,"
     }
-    const response = await axios.get('http://api.duckduckgo.com/', {
+    const response = await axios.get(url, {
         params,
         headers
     })

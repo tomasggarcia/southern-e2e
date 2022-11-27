@@ -5,7 +5,7 @@ test.beforeEach(async ({ page }, testInfo) => {
   console.log(`Running ${testInfo.title}`);
   await page.goto('');
 });
-test('Change Language', async ({ page }) => {
+test('Change Language to "Español"', async ({ page }) => {
   const settingsPage = new SettingsPage(page)
   await page.goto('');
   await settingsPage.sideBarButton.click();
