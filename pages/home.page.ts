@@ -14,9 +14,8 @@ class HomePage {
         return this.page.getByRole('button', { name: 'S' })
     }
 
-    public get wikipediaLink() {
-        // return this.page.getByRole('link', { name: 'Wikipedia' })
-        return this.page.locator('text=w')
+    link(url: string) {
+        return this.page.locator(`a >> text=${url}`).nth(0)
     }
 }
 

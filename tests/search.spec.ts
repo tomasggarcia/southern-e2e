@@ -10,6 +10,13 @@ test('to have at least 1 wikipedia link', async ({ page }) => {
   const homePage = new HomePage(page)
   await homePage.searchInput.fill('michael jordan');
   await homePage.searchButton.click();
-  console.log(await homePage.wikipediaLink.count())
-  expect(await homePage.wikipediaLink).toHaveCount(5)
+  await expect(homePage.link('wikipedia.org')).toBeVisible()
+});
+
+
+test('to have at least 1 nba.com link', async ({ page }) => {
+  const homePage = new HomePage(page)
+  await homePage.searchInput.fill('michael jordan');
+  await homePage.searchButton.click();
+  await expect(homePage.link('nba.com')).toBeVisible()
 });
