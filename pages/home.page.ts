@@ -18,8 +18,18 @@ class HomePage {
         return this.page.getByRole('button', { name: 'S' })
     }
 
+    public get searchResultImage() {
+        // return this.page.locator('.results--main >> img').nth(0)
+        return this.page.locator('.module module--images >> img').nth(0)
+    }
+
     link(url: string) {
         return this.page.locator(`a >> text=${url}`).nth(0)
+    }
+
+    async searchAction(input: string) {
+        await this.searchInputEN.fill(input);
+        await this.searchButton.click();
     }
 }
 
