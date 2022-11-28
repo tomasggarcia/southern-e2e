@@ -1,6 +1,7 @@
 const axios = require('axios')
 
 const { getToken } = require('duckduckgo-images-api/src/utils')
+const { image_search } = require('duckduckgo-images-api')
 
 const url = 'http://api.duckduckgo.com/'
 
@@ -29,6 +30,17 @@ async function printUrls(keywords) {
     return response.data.Results
 }
 
+function printDogsImages(query) {
+    image_search({ query, moderate: true }).then((results) => {
+        console.log(`\n Image Links for ${query}: \n`)
+        results.forEach((result) => console.log(`- ${result.image}`))
+    }
+    )
+}
+
 printUrls('dogecoin').then((results) => {
-    results.forEach((result) => console.log(result.FirstURL))
+    console.log(`\n Results for Dogecoin: \n`)
+    results.forEach((result) => console.log(`- ${result.FirstURL}`))
 })
+
+printDogsImages('dogs')
