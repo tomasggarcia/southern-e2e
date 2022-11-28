@@ -6,8 +6,12 @@ class HomePage {
         this.page = page
     }
 
-    public get searchInput() {
+    public get searchInputEN() {
         return this.page.getByPlaceholder('Search the web without being tracked')
+    }
+
+    public get searchInputES() {
+        return this.page.getByPlaceholder('Busca en la red sin que te rastreen')
     }
 
     public get searchButton() {
