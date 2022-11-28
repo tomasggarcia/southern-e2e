@@ -21,6 +21,13 @@ We would like to see Gherkin implemented if possible, using any library like 'be
 It would be nice if the web pages tests generate any sort of basic html report.
 ```
 
+
+Run API Script
+
+```bash
+ node ./utils/prints.js
+```
+
 Run all tests
 
 ```bash
@@ -36,7 +43,7 @@ npx playwright test --headed
 Run specific test
 
 ```bash
-npx playwright test login.spec.ts --headed
+npx playwright test search.spec.ts --headed
 ```
 
 
@@ -44,11 +51,4 @@ Reports
 
 ```bash
 npx playwright show-report
-```
-
-
-Run CODEGEN
-
-```bash
-npx playwright codegen duckduckgo.com
 ```
